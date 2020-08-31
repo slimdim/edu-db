@@ -1,0 +1,103 @@
+# подключаюсь к инстансу aws
+MacBook-Pro-Dmitrij-2:linux_admin dmitriyfilippov$ ssh -i "aws_demo.pem" ubuntu@ec2-3-129-244-42.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-3-129-244-42.us-east-2.compute.amazonaws.com (3.129.244.42)' can't be established.
+ECDSA key fingerprint is SHA256:CPkSI23TwZC6BBctdMtUiavXPcHHNWv9r6LAZLimT7U.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-129-244-42.us-east-2.compute.amazonaws.com,3.129.244.42' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-1022-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Aug 31 18:53:19 UTC 2020
+
+  System load:  0.04              Processes:             107
+  Usage of /:   40.0% of 7.69GB   Users logged in:       0
+  Memory usage: 51%               IPv4 address for eth0: 172.31.18.45
+  Swap usage:   0%
+
+ * Are you ready for Kubernetes 1.19? It's nearly here! Try RC3 with
+   sudo snap install microk8s --channel=1.19/candidate --classic
+
+   https://microk8s.io/ has docs and details.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+
+Last login: Mon Aug 31 15:52:29 2020 from 80.235.8.71
+
+# обновляю список репозиториев
+ubuntu@ip-172-31-18-45:~$ sudo apt update
+......
+
+# обновляю пакеты
+ubuntu@ip-172-31-18-45:~$ sudo apt upgrade
+......
+
+# устанавливаю gcc, make и perl (оказались установленными на версии ubuntu для aws)
+ubuntu@ip-172-31-18-45:~$ sudo apt install gcc make perl 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+gcc is already the newest version (4:9.3.0-1ubuntu2).
+gcc set to manually installed.
+make is already the newest version (4.2.1-1.2).
+make set to manually installed.
+perl is already the newest version (5.30.0-9build1).
+perl set to manually installed.
+The following packages were automatically installed and are no longer required:
+  linux-aws-headers-5.4.0-1018 linux-headers-5.4.0-1018-aws linux-image-5.4.0-1018-aws linux-modules-5.4.0-1018-aws
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ubuntu@ip-172-31-18-45:~$ sudo apt install mysql-server
+
+# устанвливаю MySQL
+ubuntu@ip-172-31-18-45:~$ sudo apt install mysql-server
+......
+
+# проверка версии MySQL
+ubuntu@ip-172-31-18-45:~$ mysql -V
+mysql  Ver 8.0.21-0ubuntu0.20.04.4 for Linux on x86_64 ((Ubuntu))
+ubuntu@ip-172-31-18-45:~$ mysqld -V
+/usr/sbin/mysqld  Ver 8.0.21-0ubuntu0.20.04.4 for Linux on x86_64 ((Ubuntu))
+
+# запускаю MySQL и устанавливаю пароль пользователю
+ubuntu@ip-172-31-18-45:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my8sql';FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> exit
+Bye
+
+# запускаю MySQL под пользователем с паролем
+ubuntu@ip-172-31-18-45:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
