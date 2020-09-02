@@ -1,0 +1,203 @@
+##########
+# 1е задание
+
+ubuntu@ip-172-31-18-45:~$ nano .my.cnf
+ubuntu@ip-172-31-18-45:~$ ls -la
+total 112
+drwxr-xr-x 7 ubuntu   ubuntu 4096 Sep  1 17:08 .
+drwxr-xr-x 4 root     root   4096 Jul 26 09:54 ..
+-rw------- 1 ubuntu   ubuntu 2551 Sep  1 17:03 .bash_history
+-rw-r--r-- 1 ubuntu   ubuntu  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 ubuntu   ubuntu 3771 Feb 25  2020 .bashrc
+drwx------ 2 ubuntu   ubuntu 4096 Jul 15 17:32 .cache
+drwx------ 3 ubuntu   ubuntu 4096 Jul 29 17:52 .config
+drwxrwxr-x 3 ubuntu   ubuntu 4096 Aug 11 17:21 .local
+-rw-rw-r-- 1 ubuntu   ubuntu   34 Sep  1 17:08 .my.cnf
+-rw------- 1 ubuntu   ubuntu   18 Aug 31 19:07 .mysql_history
+-rw-r--r-- 1 ubuntu   ubuntu  807 Feb 25  2020 .profile
+-rw------- 1 ubuntu   ubuntu   12 Jul 16 18:28 .python_history
+-rw-rw-r-- 1 ubuntu   ubuntu   66 Aug 11 18:35 .selected_editor
+drwx------ 2 ubuntu   ubuntu 4096 Jul 15 17:03 .ssh
+-rw-r--r-- 1 ubuntu   ubuntu    0 Jul 26 09:54 .sudo_as_admin_successful
+-rw------- 1 ubuntu   ubuntu 8377 Aug 11 18:22 .viminfo
+-rw-rw-r-- 1 ubuntu   ubuntu   75 Jul 29 17:55 counter.py
+drwxrwxr-x 2 ubuntu   ubuntu 4096 Aug 11 19:30 cron-back-up
+-rwxrwxr-x 1 ubuntu   ubuntu   94 Aug 11 19:09 cron-test.sh
+-rwxrwxr-x 1 ubuntu   ubuntu   69 Aug 11 18:22 even-nums.sh
+-rw-rw-r-- 1 ubuntu   ubuntu   49 Jul 22 18:01 hello-linear.py
+-rw-rw-r-- 1 user_new ubuntu   21 Jul 26 16:36 hello-world.py
+-rw-rw-r-- 1 ubuntu   ubuntu   27 Jul 22 18:00 linear-reg.py
+-rw-rw-r-- 1 ubuntu   ubuntu   37 Aug  5 17:09 test-nums.py
+-rw-rw-r-- 1 ubuntu   ubuntu   30 Aug 11 18:47 test.txt
+-rw-rw-r-- 1 ubuntu   ubuntu    0 Aug  5 17:12 testpy
+-rw-rw-r-- 1 ubuntu   ubuntu   15 Aug  5 17:00 type-sudo.py
+-rw-rw-r-- 1 ubuntu   ubuntu   14 Aug  5 17:01 type-vim.py
+ubuntu@ip-172-31-18-45:~$ cat ~/.my.cnf 
+[mysql]
+user=root
+password=my8sql
+ubuntu@ip-172-31-18-45:~$ chmod 0600 ~/.my.cnf 
+ubuntu@ip-172-31-18-45:~$ ls -la
+total 112
+drwxr-xr-x 7 ubuntu   ubuntu 4096 Sep  1 17:08 .
+drwxr-xr-x 4 root     root   4096 Jul 26 09:54 ..
+-rw------- 1 ubuntu   ubuntu 2551 Sep  1 17:03 .bash_history
+-rw-r--r-- 1 ubuntu   ubuntu  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 ubuntu   ubuntu 3771 Feb 25  2020 .bashrc
+drwx------ 2 ubuntu   ubuntu 4096 Jul 15 17:32 .cache
+drwx------ 3 ubuntu   ubuntu 4096 Jul 29 17:52 .config
+drwxrwxr-x 3 ubuntu   ubuntu 4096 Aug 11 17:21 .local
+-rw------- 1 ubuntu   ubuntu   34 Sep  1 17:08 .my.cnf
+-rw------- 1 ubuntu   ubuntu   18 Aug 31 19:07 .mysql_history
+-rw-r--r-- 1 ubuntu   ubuntu  807 Feb 25  2020 .profile
+-rw------- 1 ubuntu   ubuntu   12 Jul 16 18:28 .python_history
+-rw-rw-r-- 1 ubuntu   ubuntu   66 Aug 11 18:35 .selected_editor
+drwx------ 2 ubuntu   ubuntu 4096 Jul 15 17:03 .ssh
+-rw-r--r-- 1 ubuntu   ubuntu    0 Jul 26 09:54 .sudo_as_admin_successful
+-rw------- 1 ubuntu   ubuntu 8377 Aug 11 18:22 .viminfo
+-rw-rw-r-- 1 ubuntu   ubuntu   75 Jul 29 17:55 counter.py
+drwxrwxr-x 2 ubuntu   ubuntu 4096 Aug 11 19:30 cron-back-up
+-rwxrwxr-x 1 ubuntu   ubuntu   94 Aug 11 19:09 cron-test.sh
+-rwxrwxr-x 1 ubuntu   ubuntu   69 Aug 11 18:22 even-nums.sh
+-rw-rw-r-- 1 ubuntu   ubuntu   49 Jul 22 18:01 hello-linear.py
+-rw-rw-r-- 1 user_new ubuntu   21 Jul 26 16:36 hello-world.py
+-rw-rw-r-- 1 ubuntu   ubuntu   27 Jul 22 18:00 linear-reg.py
+-rw-rw-r-- 1 ubuntu   ubuntu   37 Aug  5 17:09 test-nums.py
+-rw-rw-r-- 1 ubuntu   ubuntu   30 Aug 11 18:47 test.txt
+-rw-rw-r-- 1 ubuntu   ubuntu    0 Aug  5 17:12 testpy
+-rw-rw-r-- 1 ubuntu   ubuntu   15 Aug  5 17:00 type-sudo.py
+-rw-rw-r-- 1 ubuntu   ubuntu   14 Aug  5 17:01 type-vim.py
+ubuntu@ip-172-31-18-45:~$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 28
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+
+##########
+# 2е задание в файле hw-2.sql
+
+##########
+# 3е задание
+
+ubuntu@ip-172-31-18-45:~$ mysqldump example > dump.sql
+ubuntu@ip-172-31-18-45:~$ ls -la
+total 116
+drwxr-xr-x 7 ubuntu   ubuntu 4096 Sep  1 18:04 .
+drwxr-xr-x 4 root     root   4096 Jul 26 09:54 ..
+-rw------- 1 ubuntu   ubuntu 2551 Sep  1 17:03 .bash_history
+-rw-r--r-- 1 ubuntu   ubuntu  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 ubuntu   ubuntu 3771 Feb 25  2020 .bashrc
+drwx------ 2 ubuntu   ubuntu 4096 Jul 15 17:32 .cache
+drwx------ 3 ubuntu   ubuntu 4096 Jul 29 17:52 .config
+drwxrwxr-x 3 ubuntu   ubuntu 4096 Aug 11 17:21 .local
+-rw------- 1 ubuntu   ubuntu   35 Sep  1 18:02 .my.cnf
+-rw------- 1 ubuntu   ubuntu  317 Sep  1 18:03 .mysql_history
+-rw-r--r-- 1 ubuntu   ubuntu  807 Feb 25  2020 .profile
+-rw------- 1 ubuntu   ubuntu   12 Jul 16 18:28 .python_history
+-rw-rw-r-- 1 ubuntu   ubuntu   66 Aug 11 18:35 .selected_editor
+drwx------ 2 ubuntu   ubuntu 4096 Jul 15 17:03 .ssh
+-rw-r--r-- 1 ubuntu   ubuntu    0 Jul 26 09:54 .sudo_as_admin_successful
+-rw------- 1 ubuntu   ubuntu 8463 Sep  1 18:02 .viminfo
+-rw-rw-r-- 1 ubuntu   ubuntu   75 Jul 29 17:55 counter.py
+drwxrwxr-x 2 ubuntu   ubuntu 4096 Aug 11 19:30 cron-back-up
+-rwxrwxr-x 1 ubuntu   ubuntu   94 Aug 11 19:09 cron-test.sh
+-rw-rw-r-- 1 ubuntu   ubuntu 1837 Sep  1 18:04 dump.sql
+-rwxrwxr-x 1 ubuntu   ubuntu   69 Aug 11 18:22 even-nums.sh
+-rw-rw-r-- 1 ubuntu   ubuntu   49 Jul 22 18:01 hello-linear.py
+-rw-rw-r-- 1 user_new ubuntu   21 Jul 26 16:36 hello-world.py
+-rw-rw-r-- 1 ubuntu   ubuntu   27 Jul 22 18:00 linear-reg.py
+-rw-rw-r-- 1 ubuntu   ubuntu   37 Aug  5 17:09 test-nums.py
+-rw-rw-r-- 1 ubuntu   ubuntu   30 Aug 11 18:47 test.txt
+-rw-rw-r-- 1 ubuntu   ubuntu    0 Aug  5 17:12 testpy
+-rw-rw-r-- 1 ubuntu   ubuntu   15 Aug  5 17:00 type-sudo.py
+-rw-rw-r-- 1 ubuntu   ubuntu   14 Aug  5 17:01 type-vim.py
+
+ubuntu@ip-172-31-18-45:~$ tail -10 dump.sql 
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-09-01 18:04:08
+
+# полный dump базы данных находится в файле dump.sql
+
+ubuntu@ip-172-31-18-45:~$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database if not exists sample;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> \q
+Bye
+ubuntu@ip-172-31-18-45:~$ mysql sample < dump.sql 
+ubuntu@ip-172-31-18-45:~$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 39
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use sample
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> \q
+Bye
+ubuntu@ip-172-31-18-45:~$ 
+
+##########
+# 4е задание
+ubuntu@ip-172-31-18-45:~$ mysqldump --opt --where "1 limit 100" mysql help_keyword > dump-help-keyword.sql
+# полный дамп в файле dump-help-keyword.sql
