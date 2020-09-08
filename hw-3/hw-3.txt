@@ -1,0 +1,90 @@
+# 1е задание
+##### подключаюсь к инстансу aws
+MacBook-Pro-Dmitrij-2:edu-linux-admin dmitriyfilippov$ ssh -i "aws_demo.pem" ubuntu@ec2-3-129-88-60.us-east-2.compute.amazonaws.com
+The authenticity of host 'ec2-3-129-88-60.us-east-2.compute.amazonaws.com (3.129.88.60)' can't be established.
+ECDSA key fingerprint is SHA256:CPkSI23TwZC6BBctdMtUiavXPcHHNWv9r6LAZLimT7U.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-3-129-88-60.us-east-2.compute.amazonaws.com,3.129.88.60' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-1022-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep  6 12:43:26 UTC 2020
+
+  System load:  0.59              Processes:             106
+  Usage of /:   40.0% of 7.69GB   Users logged in:       0
+  Memory usage: 53%               IPv4 address for eth0: 172.31.18.45
+  Swap usage:   0%
+
+ * Kubernetes 1.19 is out! Get it in one command with:
+
+     sudo snap install microk8s --channel=1.19 --classic
+
+   https://microk8s.io/ has docs and details.
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+
+Last login: Tue Sep  1 17:03:42 2020 from 80.235.8.71
+
+##### запускаю mysql
+ubuntu@ip-172-31-18-45:~$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+##### отображаю текущие базы данных
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+##### создаю базу данных и структуру через dbeaver на локальной машине
+##### см. приложенный скриншот create-vk-dbeaver.png
+
+##### отображаю текущие базы данных
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
+| vk                 |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+
+# 2е задание
+# см. приложенный дамп vk-dump.sql и скриншоты fill-vk-dbeaver.png и users-vk-ex.png
+
+# 3е задание
+# предложил бы для медиа файлов добавить столбец хэш-суммы файла, чтобы в дальнейшем можно было реализовать
+# логику проверки наличия уже загруженного файла каким-то другим пользователем и использования
+# ссылки на уже существующий файл, вместо повторной физической загрузки файла
+#
+#
+#
