@@ -17,11 +17,14 @@
 	MAX(p.birthday) OVER c_window AS youngest,
 	MIN(p.birthday) OVER c_window AS oldest,
 	COUNT(p.user_id) OVER c_window AS total_in_group,
-	COUNT(p.user_id) OVER() AS total_users,
+	SELECT
+		COUNT(*)
+	FROM
+		profiles AS total_users,
 	COUNT(p.user_id) OVER c_window / COUNT(p.user_id) OVER() * 100 AS "%%"
 FROM
 	(communities c
-JOIN communities_users cu ON
+LEFT JOIN communities_users cu ON
 	c.id = cu.community_id
 JOIN profiles p ON
 	cu.user_id = p.user_id) WINDOW c_window AS (PARTITION BY c.id);
