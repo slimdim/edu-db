@@ -116,6 +116,7 @@ DROP TABLE IF EXISTS tracks;
 CREATE TABLE tracks (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT "Идентификатор строки",
   name VARCHAR(255) NOT NULL COMMENT "Название трэка",
+  media_id INT UNSIGNED NOT NULL COMMENT "Ссылка на файл",
   explicit BOOLEAN NOT NULL COMMENT "Содержание ненормативной лексики",
   duration INT UNSIGNED NOT NULL COMMENT "Продолжительность трэка в мс",
   tempo INT UNSIGNED NOT NULL COMMENT "Темп трэка уд/мин (bpm)",
