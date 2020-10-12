@@ -58,7 +58,9 @@ ALTER TABLE playback_history
   ADD CONSTRAINT playback_history_track_id_fk
     FOREIGN KEY (track_id) REFERENCES tracks(id),
   ADD CONSTRAINT playback_history_previous_track_id_fk
-    FOREIGN KEY (previous_track_id) REFERENCES tracks(id);
+    FOREIGN KEY (previous_track_id) REFERENCES tracks(id),
+  ADD CONSTRAINT playback_history_user_id_fk
+    FOREIGN KEY (user_id) REFERENCES users(id);
     
 ALTER TABLE likes
   ADD CONSTRAINT likes_user_id_fk

@@ -152,6 +152,7 @@ CREATE TABLE album_tracks (
 DROP TABLE IF EXISTS playback_history;
 CREATE TABLE playback_history (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT "Идентификатор строки",
+  user_id INT UNSIGNED NOT NULL COMMENT "Ссылка на пользователя",
   track_id INT UNSIGNED NOT NULL COMMENT "Ссылка на трэк",
   previous_track_id INT UNSIGNED NOT NULL COMMENT "Ссылка на предыдущий трэк",
   track_playback_progress INT UNSIGNED NOT NULL COMMENT "Процент прослушивания композиции",

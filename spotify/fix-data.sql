@@ -52,3 +52,9 @@ UPDATE media SET metadata = CONCAT('{"owner":"',
  
 -- Возвращаем столбцу метеданных правильный тип
 ALTER TABLE media MODIFY COLUMN metadata JSON;
+
+-- Добавляю пропущенный стобец user_id для таблицы playback_history
+ALTER TABLE playback_history ADD COLUMN user_id INT UNSIGNED NOT NULL COMMENT "Ссылка на пользователя";
+
+-- Заполняем данными
+UPDATE playback_history SET user_id = FLOOR(1 + RAND() * 100);
